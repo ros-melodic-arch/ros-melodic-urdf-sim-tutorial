@@ -5,9 +5,8 @@ url='https://wiki.ros.org/urdf_sim_tutorial'
 
 pkgname='ros-melodic-urdf-sim-tutorial'
 pkgver='0.4.0'
-_pkgver_patch=0
 arch=('any')
-pkgrel=1
+pkgrel=2
 license=('BSD')
 
 ros_makedepends=(ros-melodic-catkin)
@@ -27,16 +26,9 @@ ros_depends=(ros-melodic-position-controllers
   ros-melodic-robot-state-publisher)
 depends=(${ros_depends[@]})
 
-# Git version (e.g. for debugging)
-# _tag=release/melodic/urdf_sim_tutorial/${pkgver}-${_pkgver_patch}
-# _dir=${pkgname}
-# source=("${_dir}"::"git+https://github.com/ros-gbp/urdf_sim_tutorial-release.git"#tag=${_tag})
-# sha256sums=('SKIP')
-
-# Tarball version (faster download)
-_dir="urdf_sim_tutorial-release-release-melodic-urdf_sim_tutorial-${pkgver}-${_pkgver_patch}"
-source=("${pkgname}-${pkgver}-${_pkgver_patch}.tar.gz"::"https://github.com/ros-gbp/urdf_sim_tutorial-release/archive/release/melodic/urdf_sim_tutorial/${pkgver}-${_pkgver_patch}.tar.gz")
-sha256sums=('520f94f7fe52250069283fc7bdd40b734e9153bdcc11b76309fe9522972d8f77')
+_dir="urdf_sim_tutorial-${pkgver}"
+source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/ros/urdf_sim_tutorial/archive/${pkgver}.tar.gz")
+sha256sums=('b5b3e36da5e437f2c610c6b33d53b959ed38b6dfbd973cf0c4fe3697228e5560')
 
 build() {
   # Use ROS environment variables
